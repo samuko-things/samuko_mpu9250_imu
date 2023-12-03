@@ -55,12 +55,12 @@ def generate_launch_description():
         executable = 'tf_test',
     )
 
-    rviz_node = Node(
-        package='rviz2',
-        executable='rviz2',
-        # arguments=['-d', rviz_config_file],
-        output='screen'
-    )
+    # rviz_node = Node(
+    #     package='rviz2',
+    #     executable='rviz2',
+    #     # arguments=['-d', rviz_config_file],
+    #     output='screen'
+    # )
 
     
     # Create the launch description and populate
@@ -69,6 +69,6 @@ def generate_launch_description():
     # Add the nodes to the launch description
     ld.add_action(samuko_mpu9250_imu_node)
     ld.add_action(tf_test_node)
-    ld.add_action(rviz_node)
+    # ld.add_action(rviz_node)
         
     return ld      # return (i.e send) the launch description for excecution
