@@ -42,7 +42,6 @@ def generate_launch_description():
 
     package_name='samuko_mpu9250_imu' #<--- CHANGE ME
     
-    # Start robot localization using an Extended Kalman filter
     config_file = os.path.join(get_package_share_directory(package_name),'config', 'samuko_mpu9250_imu_params.yaml')
     samuko_mpu9250_imu_node = Node(
         package = 'samuko_mpu9250_imu',

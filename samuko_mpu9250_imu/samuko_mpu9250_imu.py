@@ -53,7 +53,7 @@ class SamukoMPU9250(Node):
 
 
         self.ser = IMUSerialComm(self.serial_port, 115200, 0.1)
-        for i in range(20):
+        for i in range(5):
           sleep(1.0)
           self.get_logger().info('waiting for imu to configure: %d sec' %(i))
 
@@ -103,7 +103,7 @@ class SamukoMPU9250(Node):
         # read from sensor
         qw, qx, qy, qz = self.ser.get("quat")
         roll_rate, pitch_rate, yaw_rate = self.ser.get("rpy-rate")
-        accX, accY, accZ = self.ser.get("acc-cal")
+        accX, accY, accZ = self.ser.get("alin-est")
 
         # update imu message
         self.imu_data.header.stamp = self.get_clock().now().to_msg()
